@@ -1,0 +1,19 @@
+.header{
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    &__title{
+        font-weight: bold;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: #333;
+        &:hover{
+            color: var(--primary);
+        }
+        &--active{
+            color:var(--primary)
+        }
+    }
+    
+}
