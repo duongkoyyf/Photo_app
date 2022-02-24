@@ -9,6 +9,7 @@ function AddEditPhoto() {
   const history=useNavigate();
   
   const handleSubmit=(value)=>{
+    console.log(value);
     setTimeout(() => {
       dispatch(addPhoto(value));
       history('/')

@@ -22,7 +22,8 @@ PhotoCard.defaultProps = {
     }
   
     const handleRemoveClick = () => {
-      if (onRemoveClick) onRemoveClick(photo);
+    
+      if (onRemoveClick) onRemoveClick(photo.id);
     }
   
     return (

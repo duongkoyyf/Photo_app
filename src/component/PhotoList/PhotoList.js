@@ -19,15 +19,15 @@ PhotoList.defaultProps = {
 
 function PhotoList(props) {
   const { photoList, onPhotoEditClick, onPhotoRemoveClick } = props;
-
+  
   return (
     <Row>
       {photoList.map(photo => (
         <Col className='row-photo' key={photo.title} xs="12" md="6" lg="3">
           <PhotoCard
             photo={photo}
-            // onEditClick={onPhotoEditClick}
-            // onRemoveClick={onPhotoRemoveClick}
+            onEditClick={onPhotoEditClick}
+            onRemoveClick={onPhotoRemoveClick}
           />
         </Col>
       ))}

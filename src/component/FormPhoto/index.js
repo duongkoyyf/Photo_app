@@ -11,14 +11,15 @@ import * as yup from 'yup'
 
 function FormPhoto(props) {
   const initialValue = {
+    
     title: "",
     categoryId: null,
-    photo: "",
+    photo: {url:"",id:null},
   };
   const validationSchema=yup.object().shape({
     title:yup.string().required('This field is required'),
     categoryId:yup.number().required('This field is required').nullable(),
-    photo:yup.string().required('This field is required'),
+    photo:yup.object().required('This field is required').nullable(),
   });
   return (
     <div className="form">
@@ -26,6 +27,7 @@ function FormPhoto(props) {
       validationSchema={validationSchema}
       onSubmit={props.onSubmit}>
         {(props) => {
+         // console.log(props);
           const {isSubmitting}=props;
           return (
             <Form>

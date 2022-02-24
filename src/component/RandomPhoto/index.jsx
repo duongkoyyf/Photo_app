@@ -2,15 +2,24 @@ import React from "react";
 import { Button } from "reactstrap";
 
 function RandomPhoto(props) {
-  const getRandomUrlPhoto = () => {
+ 
+    const getRandomUrlPhoto = () => {
     const randomId = Math.trunc(Math.random() * 2000);
-    return `http://picsum.photos/id/${randomId}/300/300`;
+
+    return {
+      url: `http://picsum.photos/id/${randomId}/300/300`,
+      id: randomId,
+    };
   };
-  const { name, imageUrl, onImageUrlChange, onRandomButtonBlur } = props;
+  const { imageUrl, onImageUrlChange, onRandomButtonBlur } = props;
+  
   const handleRandomPhotoClick = () => {
+   
+    console.log(props);
     if (onImageUrlChange) {
       const randomImageUrl = getRandomUrlPhoto();
       onImageUrlChange(randomImageUrl);
+      
     }
   };
   return (
@@ -29,11 +38,9 @@ function RandomPhoto(props) {
           </Button>
         </div>
         <div className="random-photo__photo">
-          {imageUrl && <img src={imageUrl} alt="no img" />}
+          {imageUrl && <img src={imageUrl.url} alt="no img" />}
         </div>
       </div>
-      
-      
     </div>
   );
 }
