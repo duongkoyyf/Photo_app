@@ -1,7 +1,7 @@
 import PhotoList from "component/PhotoList/PhotoList";
 import { removePhoto } from "features/Photo/photoSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container } from "reactstrap";
 import Banner from "../Banner";
 import './Main.scss'
@@ -9,8 +9,10 @@ import './Main.scss'
 function Main(){
   const dispatch=useDispatch();
     const photos=useSelector(state=>state.photos);
-    const handlePhotoEditClick=()=>{
-
+    const history=useNavigate()
+    const handlePhotoEditClick=(props)=>{
+     
+     history(`/photo/edit/${props.id}`);
     };
     const handlePhotoRemoveClick=(id)=>{
    

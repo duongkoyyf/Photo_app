@@ -1,18 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import "./Header.scss";
+import "./Home.scss";
 
-function Header() {
+function Home() {
   return (
     <header className="header">
       <Container>
         <Row className="d-flex justify-content-between">
-          <Col xs="auto">
-            <NavLink className="header__link header__title" to="/">
-              Home
-            </NavLink>
-          </Col>
+         
           <Col xs="auto">
             <NavLink
               className="header__link"
@@ -30,4 +26,4 @@ function Header() {
     </header>
   );
 }
-export default Header;
+export default Home;

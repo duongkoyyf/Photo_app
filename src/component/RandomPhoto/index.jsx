@@ -15,7 +15,6 @@ function RandomPhoto(props) {
   
   const handleRandomPhotoClick = () => {
    
-    console.log(props);
     if (onImageUrlChange) {
       const randomImageUrl = getRandomUrlPhoto();
       onImageUrlChange(randomImageUrl);
@@ -38,7 +37,7 @@ function RandomPhoto(props) {
           </Button>
         </div>
         <div className="random-photo__photo">
-          {imageUrl && <img src={imageUrl.url} alt="no img" />}
+          {imageUrl && <img src={imageUrl.url} alt="No img" onError={handleRandomPhotoClick} />}
         </div>
       </div>
     </div>

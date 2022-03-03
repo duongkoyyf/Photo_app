@@ -10,12 +10,12 @@ import "./FormPhoto.scss";
 import * as yup from 'yup'
 
 function FormPhoto(props) {
-  const initialValue = {
-    
-    title: "",
-    categoryId: null,
-    photo: {url:"",id:null},
-  };
+  let initialValue = props.initialValue;
+  initialValue={...initialValue,photo:{
+    url:initialValue.photo||null,
+    id:initialValue.id
+  }}
+  
   const validationSchema=yup.object().shape({
     title:yup.string().required('This field is required'),
     categoryId:yup.number().required('This field is required').nullable(),

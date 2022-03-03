@@ -19,10 +19,8 @@ function RandomPhotoField(props) {
   const { name, value, onBlur } = field;
   const { errors, touched } = form;
   const showError = errors[name] && touched[name];
-  const handleImageUrlChange = (newImageUrl, id) => {
-    
-    form.setFieldValue(name, newImageUrl);
-    
+  const handleImageUrlChange = (newImageUrl) => {
+       form.setFieldValue(name, newImageUrl);
   };
   return (
     <FormGroup>
